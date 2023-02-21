@@ -6,7 +6,7 @@ from multiprocessing import Process
 
 Builder.load_file("home_page.kv")
 
-number = ["1", "2", "3", "4", "5"]
+number = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
 color = ["red", "green", "blue"]
 number_list = []
 
@@ -25,27 +25,29 @@ class Home_page(Screen):
                 number.remove(x)
                 number_list.append(x)
 
-                button = Button(on_press=self.remove)
+                button = Button(on_press=self.select_remove)
                 button.my_id = i
                 button.text = number_list[index]
                 button.background_color = "red"
                 self.ids[i].add_widget(button)
                 index += 1
-        print(number_list)
 
-    def remove(self, id):
+    def select_remove(self, id):
         self.ids[id.my_id].remove_widget(id)
         self.ids[selected_list[self.data]].add_widget(id)
         selected_remove.append(id)
         self.data += 1
         if len(selected_remove) == 3:
             if selected_remove[0].text == "1" and selected_remove[1].text == "2" and selected_remove[2].text == "3":
-                data = 0
-                for i in range(3):
-                    self.ids[selected_list[data]].remove_widget(selected_remove[data])
-                    data += 1
-                selected_list.clear()
-                for x in range(3):
-                    x+=1
-                    selected_list.append("selected{}".format(x))
-                self.data = 0
+                self.selected_remove()
+
+    def selected_remove(self):
+        data = 0
+        for i in range(3):
+            self.ids[selected_list[data]].remove_widget(selected_remove[data])
+            data += 1
+        selected_list.clear()
+        for x in range(3):
+            x+=1
+            selected_list.append("selected{}".format(x))
+        self.data = 0
