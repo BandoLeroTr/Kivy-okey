@@ -15,8 +15,6 @@ selected_remove = []
 selected_remove_text = []
 
 class Home_page(Screen):
-    def debug(self):
-        print(control_cart)
     def start(self, starter):
         if starter == "start_button1":
             for index in range(5):
