@@ -1,0 +1,68 @@
+<Home_page>:
+    FloatLayout:
+        canvas.before:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+                source: "background.jpg"
+
+    BoxLayout:
+        id: card0
+        size_hint: (.1, .2)
+        pos_hint: {"x":.1, "y":.7}
+
+    BoxLayout:
+        id: card1
+        size_hint: (.1, .2)
+        pos_hint: {"x":.28, "y":.7}
+
+    BoxLayout:
+        id: card2
+        size_hint: (.1, .2)
+        pos_hint: {"x":.46, "y":.7}
+
+    BoxLayout:
+        id: card3
+        size_hint: (.1, .2)
+        pos_hint: {"x":.64, "y":.7}
+
+    BoxLayout:
+        id: card4
+        size_hint: (.1, .2)
+        pos_hint: {"x":.82, "y":.7}
+
+#######################################################
+    BoxLayout:
+        id: selected0
+        size_hint: (.1, .2)
+        pos_hint: {"x":.35, "y":.2}
+
+    BoxLayout:
+        id: selected1
+        size_hint: (.1, .2)
+        pos_hint: {"x":.46, "y":.2}
+
+    BoxLayout:
+        id: selected2
+        size_hint: (.1, .2)
+        pos_hint: {"x":.57, "y":.2}
+
+    BoxLayout:
+        id: start_boxlayout
+        size_hint: (.1, .1)
+        pos_hint: {"x":.9}
+        Button:
+            id: start_button1
+            on_press: root.start("start_button1")
+            text: "Start"
+
+    BoxLayout:
+        id: start_button2
+
+    BoxLayout:
+        id: debug
+        size_hint: (.1, .1)
+        Button:
+            id: debug
+            on_press: root.debug()
+
